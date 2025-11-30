@@ -8,11 +8,6 @@ interface MenuGridProps {
 }
 
 export function MenuGrid({ items, onItemClick }: MenuGridProps) {
-  console.log('MenuGrid получил:', items.length, 'блюд');
-  if (items.length > 0) {
-    console.log('Первое блюдо:', items[0]);
-  }
-  
   return (
     <div className="max-w-6xl mx-auto px-3 py-4">
       <motion.div 

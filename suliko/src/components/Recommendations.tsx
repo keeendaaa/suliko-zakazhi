@@ -2,99 +2,63 @@ import { motion } from 'motion/react';
 import { MenuItem } from './types';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { TrendingUp, ChefHat, Clock, Award } from 'lucide-react';
+import { useMemo } from 'react';
 
 interface RecommendationsProps {
   onItemClick: (item: MenuItem) => void;
+  menuItems: MenuItem[];
 }
 
-const imageMap: Record<string, string> = {
-  'khinkali dumplings': 'https://images.unsplash.com/photo-1687686515394-5f5b7d50b01b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraGlua2FsaSUyMGR1bXBsaW5nc3xlbnwxfHx8fDE3NjQ1MzQ2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'adjarian khachapuri': 'https://images.unsplash.com/photo-1597566360895-5d93e580554e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZGphcmlhbiUyMGtoYWNoYXB1cml8ZW58MXx8fHwxNzY0NTM0NjExfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'pkhali appetizer': 'https://images.unsplash.com/photo-1741026079032-7cb660e44bad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwa2hhbGklMjBhcHBldGl6ZXJ8ZW58MXx8fHwxNzY0NTM0NjA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'lamb shashlik': 'https://images.unsplash.com/photo-1757251211602-679057dcf0bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW1iJTIwc2hhc2hsaWt8ZW58MXx8fHwxNzY0NTM0NjExfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'lobio': 'https://images.unsplash.com/photo-1645696329346-6d3f1b13d413?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2Jpb3xlbnwxfHx8fDE3NjQ1MzQ2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'satsivi': 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXRzaXZpfGVufDF8fHx8MTc2NDUzNDYxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'kharcho soup': 'https://images.unsplash.com/photo-1674927088227-1dae2cf25ddf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraGFyY2hvJTIwc291cHxlbnwxfHx8fDE3NjQ1MzQ2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  'chakapuli': 'https://images.unsplash.com/photo-1572449043416-55f4685c9bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFrYXB1bGl8ZW58MXx8fHwxNzY0NTM0NjE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-};
+// Функция для случайного перемешивания массива
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
-const popularItems: MenuItem[] = [
-  {
-    id: 5,
-    name: 'Хинкали',
-    description: 'Сочные грузинские пельмени с мясом и бульоном',
-    price: 450,
-    category: 'mains',
-    image: 'khinkali dumplings',
-  },
-  {
-    id: 6,
-    name: 'Хачапури по-аджарски',
-    description: 'Лодочка из теста с сыром, маслом и яйцом',
-    price: 680,
-    category: 'mains',
-    image: 'adjarian khachapuri',
-  },
-  {
-    id: 7,
-    name: 'Шашлык из баранины',
-    description: 'Сочный шашлык из отборной баранины',
-    price: 1250,
-    category: 'mains',
-    image: 'lamb shashlik',
-  },
-];
+export function Recommendations({ onItemClick, menuItems }: RecommendationsProps) {
+  // Генерируем случайные рекомендации из реальных блюд
+  const recommendations = useMemo(() => {
+    if (menuItems.length === 0) {
+      return {
+        popular: [],
+        chef: [],
+        quick: [],
+        signature: [],
+      };
+    }
 
-const chefItems: MenuItem[] = [
-  {
-    id: 1,
-    name: 'Пхали ассорти',
-    description: 'Три вида пхали из шпината, свеклы и фасоли',
-    price: 650,
-    category: 'appetizers',
-    image: 'pkhali appetizer',
-  },
-  {
-    id: 8,
-    name: 'Лобио',
-    description: 'Фасоль в ореховом соусе с кинзой',
-    price: 450,
-    category: 'appetizers',
-    image: 'lobio',
-  },
-];
+    const shuffled = shuffleArray(menuItems);
+    
+    return {
+      popular: shuffled.slice(0, 3), // Хиты недели - 3 случайных блюда
+      chef: shuffled.slice(3, 5), // Выбор шеф-повара - 2 случайных блюда
+      quick: shuffled.slice(5, 7), // Быстрые блюда - 2 случайных блюда
+      signature: shuffled.slice(7, 8), // Фирменное блюдо - 1 случайное блюдо
+    };
+  }, [menuItems]);
 
-const quickItems: MenuItem[] = [
-  {
-    id: 9,
-    name: 'Харчо',
-    description: 'Наваристый суп с говядиной и рисом',
-    price: 550,
-    category: 'soups',
-    image: 'kharcho soup',
-  },
-  {
-    id: 10,
-    name: 'Чакапули',
-    description: 'Молодая баранина с зеленью и специями',
-    price: 950,
-    category: 'mains',
-    image: 'chakapuli',
-  },
-];
+  // Получаем URL изображения для блюда
+  const getImageUrl = (item: MenuItem): string => {
+    if (item.photos && item.photos.length > 0) {
+      return item.photos[0];
+    }
+    return item.image || '';
+  };
 
-const signatureItems: MenuItem[] = [
-  {
-    id: 11,
-    name: 'Сацivi',
-    description: 'Курица в ореховом соусе с пряностями',
-    price: 850,
-    category: 'mains',
-    image: 'satsivi',
-  },
-];
+  if (menuItems.length === 0) {
+    return (
+      <div className="max-w-6xl mx-auto px-3 py-6 pb-24">
+        <div className="text-center py-20">
+          <p className="text-[#DC143C]/60 text-lg">Загрузка рекомендаций...</p>
+        </div>
+      </div>
+    );
+  }
 
-export function Recommendations({ onItemClick }: RecommendationsProps) {
   return (
     <div className="max-w-6xl mx-auto px-3 py-6 pb-24">
       {/* Popular Section */}
@@ -116,7 +80,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
 
         <div className="overflow-x-auto -mx-3 px-3 scrollbar-hide">
           <div className="flex gap-3 pb-2">
-            {popularItems.map((item, index) => (
+            {recommendations.popular.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, x: 20 }}
@@ -127,7 +91,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
               >
                 <div className="relative h-40 bg-gradient-to-br from-[#DC143C]/5 to-[#FFF8F0]">
                   <ImageWithFallback
-                    src={imageMap[item.image]}
+                    src={getImageUrl(item)}
                     alt={item.name}
                     className="w-full h-full object-cover"
                   />
@@ -163,7 +127,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          {chefItems.map((item, index) => (
+          {recommendations.chef.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -174,11 +138,11 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
             >
               <div className="relative h-32 bg-gradient-to-br from-[#DC143C]/10 to-[#8B0000]/5">
                 <ImageWithFallback
-                  src={imageMap[item.image]}
+                  src={getImageUrl(item)}
                   alt={item.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-2 right-2 bg-[#DC143C] text-white px-2 py-1 rounded-lg text-xs shadow-md">
+                <div className="absolute top-2 right-2 bg-[#DC143C] text-white px-2 py-1 rounded-lg text-xs shadow-md flex items-center gap-1">
                   <ChefHat className="w-3 h-3 inline mr-1" />
                   Шеф
                 </div>
@@ -211,7 +175,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
         </div>
 
         <div className="space-y-3">
-          {quickItems.map((item, index) => (
+          {recommendations.quick.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, x: -20 }}
@@ -222,7 +186,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
             >
               <div className="relative w-28 h-28 flex-shrink-0 bg-gradient-to-br from-[#DC143C]/10 to-[#8B0000]/5">
                 <ImageWithFallback
-                  src={imageMap[item.image]}
+                  src={getImageUrl(item)}
                   alt={item.name}
                   className="w-full h-full object-cover"
                 />
@@ -263,7 +227,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
           </div>
         </div>
 
-        {signatureItems.map((item, index) => (
+        {recommendations.signature.map((item, index) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -274,7 +238,7 @@ export function Recommendations({ onItemClick }: RecommendationsProps) {
           >
             <div className="relative h-48 bg-gradient-to-br from-[#DC143C]/10 to-[#8B0000]/5">
               <ImageWithFallback
-                src={imageMap[item.image]}
+                src={getImageUrl(item)}
                 alt={item.name}
                 className="w-full h-full object-cover"
               />

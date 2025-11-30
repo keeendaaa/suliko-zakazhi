@@ -1,6 +1,5 @@
-// Загружаем данные синхронно через статический импорт
-// Vite поддерживает импорт JSON файлов
-import menuDataRaw from '../data/menu.json';
+// Загружаем данные через fetch из public папки
+// Это более надежный способ для Vite
 
 export interface MenuSection {
   title: string;
@@ -39,16 +38,39 @@ function getImageUrl(photoPath: string): string {
   return `/images_suliko/${fileName}`;
 }
 
-export function loadMenuData(): { items: MenuItem[]; categories: string[] } {
+// Кэш для загруженных данных
+let menuDataCache: MenuData | null = null;
+
+export async function loadMenuDataAsync(): Promise<{ items: MenuItem[]; categories: string[] }> {
+  if (menuDataCache) {
+    return processMenuData(menuDataCache);
+  }
+
   try {
-    const data = menuDataRaw as unknown as MenuData;
+    const response = await fetch('/menu.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json() as MenuData;
+    menuDataCache = data;
+    return processMenuData(data);
+  } catch (error) {
+    console.error('Ошибка загрузки меню через fetch:', error);
+    return { items: [], categories: ['all'] };
+  }
+}
+
+function processMenuData(data: MenuData): { items: MenuItem[]; categories: string[] } {
+  try {
     const items: MenuItem[] = [];
     const categorySet = new Set<string>(['all']);
 
     if (!data || !data.sections) {
-      console.error('Некорректная структура данных меню');
+      console.error('Некорректная структура данных меню', data);
       return { items: [], categories: ['all'] };
     }
+    
+    console.log('Найдено секций:', data.sections.length);
 
     let itemId = 1;
     
@@ -85,16 +107,30 @@ export function loadMenuData(): { items: MenuItem[]; categories: string[] } {
 
     console.log('Загружено блюд:', items.length);
     console.log('Категории:', Array.from(categorySet));
-    console.log('Пример блюда:', items[0]);
+    if (items.length > 0) {
+      console.log('Пример блюда:', items[0]);
+    }
 
     return {
       items,
       categories: Array.from(categorySet),
     };
   } catch (error) {
-    console.error('Ошибка загрузки меню:', error);
+    console.error('Ошибка обработки данных меню:', error);
     return { items: [], categories: ['all'] };
   }
+}
+
+// Синхронная версия для обратной совместимости (попытается использовать кэш)
+export function loadMenuData(): { items: MenuItem[]; categories: string[] } {
+  if (menuDataCache) {
+    return processMenuData(menuDataCache);
+  }
+  
+  // Если данных нет в кэше, возвращаем пустой массив
+  // В этом случае нужно использовать loadMenuDataAsync
+  console.warn('Данные меню еще не загружены. Используйте loadMenuDataAsync или дождитесь загрузки.');
+  return { items: [], categories: ['all'] };
 }
 
 export function getCategoryName(categoryId: string): string {
