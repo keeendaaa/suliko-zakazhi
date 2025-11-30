@@ -1,0 +1,800 @@
+{
+  "title": "Ресторан Сулико",
+  "source_file": "/Users/kenda/menu/suki{.docx",
+  "generated_at": "2025-11-30T23:32:02.718792+00:00",
+  "sections": [
+    {
+      "title": "ВЫПЕЧКА",
+      "items": [
+        {
+          "name": "Хачапури «Сулико»",
+          "portion": "1 шт",
+          "price_text": "1 шт | 1050₽",
+          "price": {
+            "value": 1050,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image14.png"
+          ],
+          "source_paragraph": 3,
+          "description": [
+            "Фирменный хачапури от шеф-повара"
+          ]
+        },
+        {
+          "name": "Хачапури по-имеретински",
+          "portion": "1 шт",
+          "price_text": "1 шт | 900₽",
+          "price": {
+            "value": 900,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image12.png"
+          ],
+          "source_paragraph": 5,
+          "description": [
+            "Оригинальный грузинский рецепт"
+          ]
+        },
+        {
+          "name": "Ачма",
+          "portion": "100г (вес 200-250г)",
+          "price_text": "100г (вес 200-250г) | 370₽",
+          "price": {
+            "value": 370,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image33.png"
+          ],
+          "source_paragraph": 7,
+          "description": [
+            "Слоеный пирог с сыром Сулугуни"
+          ]
+        },
+        {
+          "name": "Кубдари",
+          "portion": "1 шт",
+          "price_text": "1 шт | 980₽",
+          "price": {
+            "value": 980,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image29.png"
+          ],
+          "source_paragraph": 9,
+          "description": [
+            "Пирог с фаршем: свинина-говядина, специи и зелень"
+          ]
+        },
+        {
+          "name": "Лепешка с зеленью «Кахура»",
+          "portion": "1 порция",
+          "price_text": "1 порция | 400₽",
+          "price": {
+            "value": 400,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image34.png"
+          ],
+          "source_paragraph": 11,
+          "description": [
+            "Рубленная смешанная зелень, посыпанная \tсыром, зеленью"
+          ]
+        },
+        {
+          "name": "Грузинский лаваш «Тонэ»",
+          "portion": "1 порция",
+          "price_text": "1 порция | 150₽",
+          "price": {
+            "value": 150,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image39.png"
+          ],
+          "source_paragraph": 13
+        },
+        {
+          "name": "Лаваш тонкий бездрожжевой",
+          "portion": "1 порция",
+          "price_text": "1 порция | 120₽",
+          "price": {
+            "value": 120,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image35.png"
+          ],
+          "source_paragraph": 15
+        },
+        {
+          "name": "Хачапури по-мегрельски",
+          "portion": "1 шт",
+          "price_text": "1 шт | 950₽",
+          "price": {
+            "value": 950,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image36.png"
+          ],
+          "source_paragraph": 17,
+          "description": [
+            "Сырный пирог, дополнительно посыпанный сыром Сулугуни"
+          ]
+        },
+        {
+          "name": "Хачапури по-аджарски",
+          "portion": "1 шт",
+          "price_text": "1 шт | 880₽",
+          "price": {
+            "value": 880,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image26.png"
+          ],
+          "source_paragraph": 19,
+          "description": [
+            "В форме лодочки с яйцом"
+          ]
+        },
+        {
+          "name": "Хачапури «Гурули»",
+          "portion": "1 шт",
+          "price_text": "1 шт | 850₽",
+          "price": {
+            "value": 850,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image25.png"
+          ],
+          "source_paragraph": 21,
+          "description": [
+            "В форме полумесяца с вареным рубленым яйцом"
+          ]
+        },
+        {
+          "name": "Хачапури со шпинатом и сулугуни",
+          "portion": "1 шт",
+          "price_text": "1 шт | 780₽",
+          "price": {
+            "value": 780,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image42.png"
+          ],
+          "source_paragraph": 23
+        },
+        {
+          "name": "Хачапури со шпинатом и отварным картофелем",
+          "portion": "1 шт",
+          "price_text": "1 шт | 750₽",
+          "price": {
+            "value": 750,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image13.png"
+          ],
+          "source_paragraph": 25
+        },
+        {
+          "name": "Лобиани",
+          "portion": "1 шт",
+          "price_text": "1 шт | 720₽",
+          "price": {
+            "value": 720,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image48.png"
+          ],
+          "source_paragraph": 27,
+          "description": [
+            "Национальный пирог с пюре из красной фасоли и зеленью"
+          ]
+        },
+        {
+          "name": "Мчади",
+          "portion": "1 шт",
+          "price_text": "1 шт | 240₽",
+          "price": {
+            "value": 240,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image4.png"
+          ],
+          "source_paragraph": 29,
+          "description": [
+            "Национальная лепешка из кукурузной муки"
+          ]
+        }
+      ],
+      "description": [
+        "Традиционная грузинская выпечка, включая Тонис Пури, Шотис Пури (лодочкой), Тоно (печь), Мчади (кукурузная лепешка), бухари (печь), кеци (керамические сковороды) и лаваш."
+      ]
+    },
+    {
+      "title": "Холодные ЗАКУСКИ",
+      "items": [
+        {
+          "name": "Сациви",
+          "portion": "250г",
+          "price_text": "250г | 690₽",
+          "price": {
+            "value": 690,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image44.png"
+          ],
+          "source_paragraph": 34,
+          "description": [
+            "Обжаренное куриное филе в ореховом соусе"
+          ]
+        },
+        {
+          "name": "Кучмачи классический с орехами",
+          "portion": "200г",
+          "price_text": "200г | 650₽",
+          "price": {
+            "value": 650,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image11.png"
+          ],
+          "source_paragraph": 36,
+          "description": [
+            "Вареная говяжья печень со специями, луком, зеленью и зернами граната"
+          ]
+        },
+        {
+          "name": "Пхали ассорти",
+          "portion": "350г",
+          "price_text": "350г | 980₽",
+          "price": {
+            "value": 980,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image47.png"
+          ],
+          "source_paragraph": 38,
+          "description": [
+            "Баклажаны, шпинат, свекла, зеленая фасоль, грецкие орехи, зерна граната, специи"
+          ]
+        },
+        {
+          "name": "Пхали из шпината",
+          "portion": "120г/10г",
+          "price_text": "120г/10г | 490₽",
+          "price": {
+            "value": 490,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image1.png"
+          ],
+          "source_paragraph": 40
+        },
+        {
+          "name": "Пхали из свеклы",
+          "portion": "120г/10г",
+          "price_text": "120г/10г | 450₽",
+          "price": {
+            "value": 450,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image1.png"
+          ],
+          "source_paragraph": 42
+        },
+        {
+          "name": "Пхали из зелёной фасоли",
+          "portion": "120г/10г",
+          "price_text": "120г/10г | 470₽",
+          "price": {
+            "value": 470,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image1.png"
+          ],
+          "source_paragraph": 44
+        },
+        {
+          "name": "Аджапсандали",
+          "portion": "250г",
+          "price_text": "250г | 670₽",
+          "price": {
+            "value": 670,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image32.png"
+          ],
+          "source_paragraph": 46,
+          "description": [
+            "Овощное рагу из баклажанов, сладкого перца, помидоров, зелени и лука"
+          ]
+        },
+        {
+          "name": "Баклажаны с грецкими орехами",
+          "portion": "5 шт",
+          "price_text": "5 шт | 690₽",
+          "price": {
+            "value": 690,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image28.png"
+          ],
+          "source_paragraph": 48,
+          "description": [
+            "Жареные ломтики баклажанов, фаршированные ореховой пастой и зернами граната"
+          ]
+        },
+        {
+          "name": "Баклажаны по-кахетински",
+          "portion": "1 порция",
+          "price_text": "1 порция | 650₽",
+          "price": {
+            "value": 650,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image20.png"
+          ],
+          "source_paragraph": 50,
+          "description": [
+            "Рубленные жареные ломтики баклажанов с чесноком, зеленью, болгарским перцем и уксусом"
+          ]
+        },
+        {
+          "name": "Лобио с орехами",
+          "portion": "150г",
+          "price_text": "150г | 590₽",
+          "price": {
+            "value": 590,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image19.png"
+          ],
+          "source_paragraph": 52,
+          "description": [
+            "Вареная целая красная фасоль, грецкие орехи, специи, зерна граната, красный лук, виноградный уксус"
+          ]
+        },
+        {
+          "name": "Джонджоли",
+          "portion": "150г",
+          "price_text": "150г | 550₽",
+          "price": {
+            "value": 550,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image31.png"
+          ],
+          "source_paragraph": 54,
+          "description": [
+            "Редкий вид каперсов из Восточной Грузии, маринованные по традиционному рецепту"
+          ]
+        },
+        {
+          "name": "Ассорти мясной гастрономии",
+          "portion": "250г",
+          "price_text": "250г | 1150₽",
+          "price": {
+            "value": 1150,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image5.png"
+          ],
+          "source_paragraph": 56,
+          "description": [
+            "Вареная свинина, домашний куриный рулет, вареный говяжий язык, горчица"
+          ]
+        },
+        {
+          "name": "Ассорти из свежих овощей",
+          "portion": "450г",
+          "price_text": "450г | 650₽",
+          "price": {
+            "value": 650,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image17.png"
+          ],
+          "source_paragraph": 58,
+          "description": [
+            "Огурцы, помидоры, болгарский перец, зелень, редис"
+          ]
+        },
+        {
+          "name": "Ассорти из зелени",
+          "portion": "100г",
+          "price_text": "100г | 350₽",
+          "price": {
+            "value": 350,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image2.png"
+          ],
+          "source_paragraph": 60,
+          "description": [
+            "Петрушка, укроп, кинза, зелёный лук"
+          ]
+        },
+        {
+          "name": "Ассорти из маслин и оливок",
+          "portion": "150г",
+          "price_text": "150г | 480₽",
+          "price": {
+            "value": 480,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image22.png"
+          ],
+          "source_paragraph": 62
+        },
+        {
+          "name": "Ассорти из солений",
+          "portion": "350г",
+          "price_text": "350г | 650₽",
+          "price": {
+            "value": 650,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image16.png"
+          ],
+          "source_paragraph": 64,
+          "description": [
+            "Капуста по-гурийски, перец острый, помидор, чеснок, огурец соленый"
+          ]
+        },
+        {
+          "name": "Ассорти рыбное",
+          "portion": "200г/30г",
+          "price_text": "200г/30г | 1350₽",
+          "price": {
+            "value": 1350,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image24.png"
+          ],
+          "source_paragraph": 66,
+          "description": [
+            "Лосось с/с, форель подкопчённая, балык масляной рыбы, лимон, сливочное масло"
+          ]
+        },
+        {
+          "name": "Ассорти кавказских сыров",
+          "portion": "270г",
+          "price_text": "270г | 950₽",
+          "price": {
+            "value": 950,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image6.png"
+          ],
+          "source_paragraph": 68,
+          "description": [
+            "Сулугуни, чечил, копчёный сулугуни, брынза с/с"
+          ]
+        },
+        {
+          "name": "Отварной говяжий язык с хреном",
+          "portion": "100г/30г",
+          "price_text": "100г/30г | 590₽",
+          "price": {
+            "value": 590,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image7.png"
+          ],
+          "source_paragraph": 70
+        },
+        {
+          "name": "Сыр овечий «Гуда»",
+          "portion": "50г",
+          "price_text": "50г | 260₽",
+          "price": {
+            "value": 260,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image52.png"
+          ],
+          "source_paragraph": 72
+        },
+        {
+          "name": "Молочный сыр Сулугуни",
+          "portion": "100г",
+          "price_text": "100г | 320₽",
+          "price": {
+            "value": 320,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image27.png"
+          ],
+          "source_paragraph": 74
+        },
+        {
+          "name": "Бастурма/Суджук",
+          "portion": "50г/50г",
+          "price_text": "50г/50г | 650₽",
+          "price": {
+            "value": 650,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image37.png"
+          ],
+          "source_paragraph": 76
+        },
+        {
+          "name": "Домашнее сало с прослойкой от Тётушки Кэтино",
+          "portion": "100г/30г",
+          "price_text": "100г/30г | 540₽",
+          "price": {
+            "value": 540,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image21.png"
+          ],
+          "source_paragraph": 78,
+          "description": [
+            "Подаётся с чесноком и зелёным луком"
+          ]
+        },
+        {
+          "name": "Филе селёдки с отварным картофелем",
+          "portion": "250г",
+          "price_text": "250г | 540₽",
+          "price": {
+            "value": 540,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image10.png"
+          ],
+          "source_paragraph": 80,
+          "description": [
+            "Селёдка с/с, отварной картофель, укроп масло"
+          ]
+        }
+      ],
+      "description": [
+        "Обилие еды в Грузии, с акцентом на холодные закуски. Включает Аджапсандали (тушеные баклажаны), баклажанные рулетики, Мацони (йогурт), Пхали (овощная паста), Сациви (курица в ореховом соусе) и Лобио (блюдо из фасоли)."
+      ]
+    },
+    {
+      "title": "САЛАТЫ",
+      "items": [
+        {
+          "name": "«Сулико»",
+          "portion": "250г",
+          "price_text": "250г | 750₽",
+          "price": {
+            "value": 750,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image50.png"
+          ],
+          "source_paragraph": 87,
+          "description": [
+            "Куриное филе, жареные грибы, помидоры, сыр Сулугуни, аджика, домашний майонез, специи"
+          ]
+        },
+        {
+          "name": "Овощной по-грузински",
+          "portion": "250г",
+          "price_text": "250г | 750₽",
+          "price": {
+            "value": 750,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image51.png"
+          ],
+          "source_paragraph": 89,
+          "description": [
+            "Огурцы, помидоры, болгарский перец, зелень, грецкие орехи, лук репчатый"
+          ]
+        },
+        {
+          "name": "«Капрезе» по-грузински",
+          "portion": "230г",
+          "price_text": "230г | 650₽",
+          "price": {
+            "value": 650,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image45.png"
+          ],
+          "source_paragraph": 91,
+          "description": [
+            "Томаты, сыр Сулугуни, зелёный соус из зелени, крем бальзамик"
+          ]
+        },
+        {
+          "name": "«Батумо» с морепродуктами",
+          "portion": "250г",
+          "price_text": "250г | 1150₽",
+          "price": {
+            "value": 1150,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image38.png"
+          ],
+          "source_paragraph": 93,
+          "description": [
+            "Мидии, креветки, кальмары, мини осьминожки, микс салата, кедр. орешки фирменный соус"
+          ]
+        },
+        {
+          "name": "«Цезарь» с куриным филе",
+          "portion": "200г",
+          "price_text": "200г | 850₽",
+          "price": {
+            "value": 850,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image18.png"
+          ],
+          "source_paragraph": 95
+        },
+        {
+          "name": "«Цезарь» с креветками",
+          "portion": "200г",
+          "price_text": "200г | 950₽",
+          "price": {
+            "value": 950,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image41.png"
+          ],
+          "source_paragraph": 97
+        },
+        {
+          "name": "«Цезарь» с лососем",
+          "portion": "200г",
+          "price_text": "200г | 990₽",
+          "price": {
+            "value": 990,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image43.png",
+            "/Users/kenda/menu/images_suliko/image3.png"
+          ],
+          "source_paragraph": 99
+        },
+        {
+          "name": "Теплый мясной салат",
+          "portion": "250г",
+          "price_text": "250г | 950₽",
+          "price": {
+            "value": 950,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image15.png"
+          ],
+          "source_paragraph": 101,
+          "description": [
+            "Филе телятины, картофель, томаты, перец сладкий, салат микс, соус фирм."
+          ]
+        },
+        {
+          "name": "«Греческий»",
+          "portion": "250г",
+          "price_text": "250г | 750₽",
+          "price": {
+            "value": 750,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image9.png"
+          ],
+          "source_paragraph": 105,
+          "description": [
+            "Огурцы, помидоры, болгарский перец, сыр Фета, лист салата, олив. масло"
+          ]
+        },
+        {
+          "name": "«Багратиони»",
+          "portion": "250г",
+          "price_text": "250г | 790₽",
+          "price": {
+            "value": 790,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image40.png"
+          ],
+          "source_paragraph": 108,
+          "description": [
+            "Шинкованный язык говяжий отварной, шампиньоны, огурец, домашний майонез"
+          ]
+        },
+        {
+          "name": "Из свеклы с сыром Фета",
+          "portion": "250г",
+          "price_text": "250г | 690₽",
+          "price": {
+            "value": 690,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image49.png"
+          ],
+          "source_paragraph": 112,
+          "description": [
+            "Лист салата, отварная свекла, сыр Фета, томаты черри, фирменный соус"
+          ]
+        },
+        {
+          "name": "«Чиора» с хрустящими баклажанами",
+          "portion": "250г",
+          "price_text": "250г | 750₽",
+          "price": {
+            "value": 750,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image46.png"
+          ],
+          "source_paragraph": 116,
+          "description": [
+            "Дольки хрустящих баклажан, томаты, творожный сыр, кинза, кисло-сладкий соус"
+          ]
+        },
+        {
+          "name": "«Тбилиси»",
+          "portion": "250г",
+          "price_text": "250г | 750₽",
+          "price": {
+            "value": 750,
+            "currency": "₽"
+          },
+          "photos": [
+            "/Users/kenda/menu/images_suliko/image23.png"
+          ],
+          "source_paragraph": 119,
+          "description": [
+            "Отварная говядина, болгарский перец, красная фасоль, лук, кинза, фирменная заправка"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,19 @@
 import { motion } from 'motion/react';
-import { UtensilsCrossed, Coffee, Cake, Wine } from 'lucide-react';
+import { UtensilsCrossed, Coffee, Cake, Wine, ChefHat } from 'lucide-react';
 import { Category } from './types';
+import { getCategoryName } from '../utils/menuLoader';
 
 interface CategoryTabsProps {
   selectedCategory: string;
   onSelectCategory: (category: string) => void;
+  categories: string[];
 }
 
-const categories: Category[] = [
+const defaultCategories: Category[] = [
   { id: 'all', name: 'Все', icon: 'utensils' },
+  { id: 'baking', name: 'Выпечка', icon: 'chef' },
   { id: 'appetizers', name: 'Закуски', icon: 'utensils' },
-  { id: 'mains', name: 'Основные', icon: 'utensils' },
-  { id: 'desserts', name: 'Десерты', icon: 'cake' },
-  { id: 'drinks', name: 'Напитки', icon: 'coffee' },
+  { id: 'salads', name: 'Салаты', icon: 'utensils' },
 ];
 
 const iconMap = {
@@ -20,14 +21,25 @@ const iconMap = {
   coffee: Coffee,
   cake: Cake,
   wine: Wine,
+  chef: ChefHat,
 };
 
-export function CategoryTabs({ selectedCategory, onSelectCategory }: CategoryTabsProps) {
+export function CategoryTabs({ selectedCategory, onSelectCategory, categories }: CategoryTabsProps) {
+  // Создаем категории из списка, используя маппинг
+  const categoryList = categories.map((catId) => {
+    const defaultCat = defaultCategories.find(c => c.id === catId);
+    return {
+      id: catId,
+      name: defaultCat?.name || getCategoryName(catId),
+      icon: defaultCat?.icon || 'utensils',
+    };
+  });
+
   return (
     <div className="sticky top-0 z-40 bg-[#FFF8F0] border-b border-[#DC143C]/10 shadow-sm">
       <div className="overflow-x-auto scrollbar-hide">
         <div className="flex gap-2 px-3 py-2.5 min-w-max">
-          {categories.map((category) => {
+          {categoryList.map((category) => {
             const Icon = iconMap[category.icon as keyof typeof iconMap] || UtensilsCrossed;
             const isSelected = selectedCategory === category.id;
             

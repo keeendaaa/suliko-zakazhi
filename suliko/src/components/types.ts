@@ -3,8 +3,10 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  category: 'appetizers' | 'mains' | 'desserts' | 'drinks';
-  image: string;
+  portion?: string;
+  category: string;
+  photos?: string[];
+  image: string; // для обратной совместимости
 }
 
 export interface Category {
