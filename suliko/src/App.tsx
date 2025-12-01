@@ -63,14 +63,16 @@ export default function App() {
 
       {activeTab === 'recommendations' && <Recommendations onItemClick={setSelectedItem} menuItems={menuItems} />}
       
-      {activeTab === 'ai' && <AIWaiter />}
+      {activeTab === 'ai' && <AIWaiter menuItems={menuItems} onItemClick={setSelectedItem} />}
 
       <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
       
       {selectedItem && (
         <MenuDetailModal 
           item={selectedItem} 
-          onClose={() => setSelectedItem(null)} 
+          onClose={() => setSelectedItem(null)}
+          menuItems={menuItems}
+          onItemClick={setSelectedItem}
         />
       )}
     </div>

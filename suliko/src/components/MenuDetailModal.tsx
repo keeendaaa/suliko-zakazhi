@@ -2,18 +2,33 @@ import { motion, AnimatePresence } from 'motion/react';
 import { MenuItem } from './types';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 interface MenuDetailModalProps {
   item: MenuItem;
   onClose: () => void;
+  menuItems: MenuItem[];
+  onItemClick: (item: MenuItem) => void;
 }
 
-export function MenuDetailModal({ item, onClose }: MenuDetailModalProps) {
+export function MenuDetailModal({ item, onClose, menuItems, onItemClick }: MenuDetailModalProps) {
+  
   // Используем первое фото из массива или image для обратной совместимости
   const imageUrl = (item.photos && item.photos.length > 0) 
     ? item.photos[0] 
     : item.image || '';
+
+  // Находим похожие блюда (из той же категории, исключая текущее)
+  const similarItems = useMemo(() => {
+    const sameCategory = menuItems.filter(
+      menuItem => menuItem.category === item.category && menuItem.id !== item.id
+    );
+    
+    // Перемешиваем и берем 2-3 блюда
+    const shuffled = [...sameCategory].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 3);
+  }, [item, menuItems]);
+
   useEffect(() => {
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden';
@@ -75,10 +90,52 @@ export function MenuDetailModal({ item, onClose }: MenuDetailModalProps) {
 
             {/* Additional details */}
             {item.portion && (
-              <div className="border-t border-[#DC143C]/10 pt-5 space-y-3">
+              <div className="border-t border-[#DC143C]/10 pt-5 space-y-3 mb-5">
                 <div className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 bg-[#DC143C] rounded-full"></div>
                   <span className="text-gray-700 text-sm">Порция: {item.portion}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Similar items */}
+            {similarItems.length > 0 && (
+              <div className="border-t border-[#DC143C]/10 pt-5">
+                <h3 className="text-[#DC143C] mb-4 text-lg">Похожие блюда</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {similarItems.map((similarItem) => {
+                    const similarImageUrl = (similarItem.photos && similarItem.photos.length > 0) 
+                      ? similarItem.photos[0] 
+                      : similarItem.image || '';
+                    
+                    return (
+                      <motion.div
+                        key={similarItem.id}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                        onClick={() => {
+                          onItemClick(similarItem);
+                        }}
+                        className="bg-white rounded-xl overflow-hidden shadow-md active:scale-95 transition-transform cursor-pointer border border-[#DC143C]/10"
+                      >
+                        <div className="relative h-32 overflow-hidden bg-gradient-to-br from-[#DC143C]/5 to-[#FFF8F0]">
+                          <ImageWithFallback
+                            src={similarImageUrl}
+                            alt={similarItem.name}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute top-2 right-2 bg-[#DC143C] text-white px-2 py-1 rounded-lg text-xs shadow-md">
+                            {similarItem.price} ₽
+                          </div>
+                        </div>
+                        <div className="p-3">
+                          <h4 className="text-[#DC143C] text-sm mb-1 line-clamp-1">{similarItem.name}</h4>
+                          <p className="text-gray-600 text-xs line-clamp-2">{similarItem.description}</p>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             )}
