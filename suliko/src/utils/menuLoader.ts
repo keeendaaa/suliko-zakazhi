@@ -34,8 +34,9 @@ const sectionToCategory: Record<string, string> = {
 function getImageUrl(photoPath: string): string {
   // Извлекаем имя файла из пути (например, image1.png)
   const fileName = photoPath.split('/').pop() || '';
-  // В Vite файлы из папки public доступны по корневому пути
-  return `/images_suliko/${fileName}`;
+  // Используем base path из vite.config
+  const baseUrl = import.meta.env.BASE_URL || '/yourgos/';
+  return `${baseUrl}images_suliko/${fileName}`;
 }
 
 // Кэш для загруженных данных
@@ -47,7 +48,12 @@ export async function loadMenuDataAsync(): Promise<{ items: MenuItem[]; categori
   }
 
   try {
-    const response = await fetch('/menu.json');
+    // Используем base path из vite.config (import.meta.env.BASE_URL)
+    const baseUrl = import.meta.env.BASE_URL || '/yourgos/';
+    const menuUrl = `${baseUrl}menu.json`;
+    console.log('Загружаем меню из:', menuUrl);
+    
+    const response = await fetch(menuUrl);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
